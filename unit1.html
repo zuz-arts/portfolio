@@ -166,11 +166,109 @@
       margin: 0 0 1.2rem;
     }
 
+    .media-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin: 1.5rem 0 2rem;
+    }
+
+    .blog-figure {
+      margin: 0;
+      border: 1px solid rgba(109,53,182,.2);
+      background: rgba(255,255,255,.4);
+      border-radius: 18px;
+      padding: .75rem;
+      box-shadow: 0 8px 24px rgba(44, 26, 65, .08);
+    }
+
+    .image-button {
+      width: 100%;
+      border: none;
+      background: none;
+      padding: 0;
+      margin: 0;
+      display: block;
+      cursor: zoom-in;
+    }
+
+    .image-button svg {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      background: rgba(255,255,255,.2);
+    }
+
+    .figure-label {
+      margin-top: .55rem;
+      font-size: .75rem;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-align: center;
+      font-weight: 700;
+    }
+
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      background: rgba(15, 12, 22, .72);
+      z-index: 1000;
+      padding: 1.5rem;
+    }
+
+    .lightbox.open {
+      display: flex;
+    }
+
+    .lightbox-content {
+      max-width: min(92vw, 1100px);
+      max-height: 92vh;
+      background: #fff;
+      border-radius: 18px;
+      padding: 1rem;
+      box-shadow: 0 25px 75px rgba(0,0,0,.35);
+      position: relative;
+    }
+
+    .lightbox-content .close-btn {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      width: 38px;
+      height: 38px;
+      border: none;
+      border-radius: 50%;
+      background: rgba(0,0,0,.1);
+      color: #000;
+      font-size: 1.5rem;
+      cursor: pointer;
+      line-height: 1;
+    }
+
+    .lightbox-content svg {
+      display: block;
+      width: 100%;
+      max-height: 85vh;
+      border-radius: 12px;
+      background: #fff;
+    }
+
     footer {
       padding: 1.5rem 1rem 2rem;
       text-align: center;
       color: var(--muted);
       font-size: .9rem;
+    }
+
+    @media (max-width: 700px) {
+      .media-row {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
@@ -200,6 +298,209 @@
       <p class="section-label">Blog</p>
       <h3 id="a-phenomenon-in-my-world-generic-medication-issues">A Phenomenon In My World: Generic Medication Issues</h3>
 
+      <div class="media-row">
+        <figure class="blog-figure">
+          <button class="image-button" type="button" aria-label="Open image 1 in a larger view" data-target="image-1">
+            <svg viewBox="0 0 820 620" role="img" aria-label="Concept sketch of generic medication challenges and healthcare system">
+              <rect width="820" height="620" fill="#f7f1ed"/>
+              <g stroke="#000" stroke-linecap="round" stroke-linejoin="round" fill="none">
+                <path d="M85 165 C 140 130, 220 145, 285 180" stroke-width="3" fill="none"/>
+                <path d="M400 120 C 495 92, 565 111, 620 151" stroke-width="3" fill="none"/>
+                <path d="M510 228 C 610 240, 690 307, 715 365" stroke-width="3" fill="none"/>
+                <path d="M190 420 C 233 380, 255 358, 286 330" stroke-width="3" fill="none"/>
+                <path d="M110 520 C 260 560, 340 540, 390 480" stroke-width="3" fill="none"/>
+                <path d="M460 500 C 540 560, 630 548, 712 508" stroke-width="3" fill="none"/>
+              </g>
+
+              <g font-family="Comic Sans MS, cursive" fill="#221b2d" font-size="27" font-weight="600">
+                <text x="35" y="150">STUDENTS ARE</text>
+                <text x="50" y="182">UNSUSPECTING</text>
+                <text x="55" y="212">OF THE</text>
+                <text x="58" y="242">DIFFERENCE</text>
+
+                <text x="230" y="130">WHY ISN'T</text>
+                <text x="230" y="160">THE FAKE,</text>
+                <text x="252" y="190">UNTESTED +</text>
+                <text x="260" y="220">VERY STRONG WEED</text>
+                <text x="270" y="250">ILLEGAL</text>
+
+                <text x="610" y="130">WHY IS INDIA</text>
+                <text x="620" y="160">NOT LEAFAL</text>
+                <text x="665" y="190">STATE</text>
+
+                <text x="15" y="350">HAVING HAD A</text>
+                <text x="15" y="382">MEDICAL CARD IN</text>
+                <text x="15" y="414">OHIO I CAN SAY</text>
+                <text x="20" y="446">WITH CERTAINTY THE</text>
+                <text x="40" y="478">PRODUCTS SOLD ARE</text>
+                <text x="60" y="510">FROM REAL</text>
+
+                <text x="270" y="520">BLOOMINGTON HAS SO</text>
+                <text x="290" y="552">MANY SMOKE SHOPS</text>
+                <text x="320" y="584">SELLING THC-A</text>
+                <text x="335" y="610">PRODUCTS</text>
+              </g>
+
+              <g stroke="#2d1648" stroke-width="4" fill="none">
+                <path d="M268 220 C 340 230, 380 250, 420 290"/>
+                <path d="M405 290 C 455 330, 502 405, 574 406"/>
+                <path d="M532 410 C 592 390, 622 430, 642 520"/>
+              </g>
+
+              <g>
+                <path d="M166 316 C 180 290, 206 270, 250 270 C 327 270, 364 322, 362 377 C 360 446, 301 488, 208 485 C 166 484, 105 457, 98 410 C 92 373, 122 342, 166 316 Z" fill="#c767d2" opacity="0.9"/>
+                <path d="M106 369 C 125 327, 196 318, 252 324 C 326 332, 348 394, 327 436 C 307 476, 240 490, 175 478 C 128 470, 90 428, 106 369 Z" fill="#3d2a6d"/>
+                <path d="M148 330 C 198 295, 285 306, 314 352 C 340 392, 318 440, 251 460 C 201 474, 144 458, 122 418 C 112 401, 128 351, 148 330 Z" fill="#6d35b6"/>
+                <path d="M144 335 L 284 345" stroke="#efc558" stroke-width="7" stroke-linecap="round"/>
+                <path d="M130 373 L 299 382" stroke="#efc558" stroke-width="7" stroke-linecap="round"/>
+                <path d="M130 409 L 295 416" stroke="#efc558" stroke-width="7" stroke-linecap="round"/>
+                <circle cx="190" cy="360" r="34" fill="#53b7e6"/>
+                <circle cx="250" cy="355" r="36" fill="#ffbf47"/>
+                <circle cx="246" cy="410" r="34" fill="#91d36a"/>
+                <circle cx="187" cy="413" r="30" fill="#ff7a59"/>
+                <path d="M182 448 C 248 468, 288 468, 326 450" stroke="#f8d879" stroke-width="8" fill="none"/>
+                <path d="M120 453 C 180 498, 263 514, 332 479" stroke="#ff6f45" stroke-width="10" fill="none"/>
+                <path d="M183 311 C 200 277, 246 268, 272 285" stroke="#ffcf7b" stroke-width="6" fill="none"/>
+                <circle cx="120" cy="377" r="8" fill="#ffec70"/>
+                <circle cx="315" cy="377" r="8" fill="#ffec70"/>
+                <circle cx="99" cy="420" r="8" fill="#ffec70"/>
+                <circle cx="346" cy="421" r="8" fill="#ffec70"/>
+              </g>
+
+              <g font-family="Comic Sans MS, cursive" fill="#1d1630" font-size="24" font-weight="600">
+                <text x="394" y="340">DROVE AWAY FROM CVS</text>
+                <text x="417" y="370">WITH A CONTROLLED SUBSTANCE</text>
+                <text x="425" y="400">GENERIC THAT I DO NOT</text>
+                <text x="430" y="430">TOLERATE THIS GENERIC</text>
+
+                <text x="590" y="498">WORRY</text>
+                <text x="552" y="529">OVER WHETHER</text>
+                <text x="557" y="560">MY DOCTOR</text>
+                <text x="550" y="590">WILL FIX THE</text>
+                <text x="557" y="618">ISSUE</text>
+              </g>
+            </svg>
+          </button>
+          <div class="figure-label">Image 1</div>
+        </figure>
+
+        <figure class="blog-figure">
+          <button class="image-button" type="button" aria-label="Open image 2 in a larger view" data-target="image-2">
+            <svg viewBox="0 0 820 620" role="img" aria-label="Concept sketch of the medical system and stigma around ADHD medication">
+              <rect width="820" height="620" fill="#f6efe9"/>
+              <g stroke="#000" stroke-linecap="round" stroke-linejoin="round" fill="none">
+                <path d="M50 130 C 110 95, 185 95, 255 120" stroke-width="3"/>
+                <path d="M548 128 C 615 115, 693 118, 770 150" stroke-width="3"/>
+                <path d="M145 485 C 255 515, 365 515, 460 485" stroke-width="3"/>
+                <path d="M598 495 C 640 530, 710 530, 760 498" stroke-width="3"/>
+              </g>
+
+              <g font-family="Comic Sans MS, cursive" fill="#1e1530" font-size="25" font-weight="600">
+                <text x="30" y="108">DIFFICULTY GAINING</text>
+                <text x="38" y="142">CREDIBILITY:</text>
+                <text x="34" y="198">in spite of being</text>
+                <text x="22" y="226">"medically literate," my</text>
+                <text x="12" y="252">diagnosis's comorbidities</text>
+                <text x="24" y="280">+ their resulting effects</text>
+                <text x="18" y="308">are undermined</text>
+                <text x="15" y="362">because of</text>
+                <text x="15" y="390">comorbidities, there</text>
+                <text x="18" y="418">is limited research</text>
+                <text x="15" y="444">on my particular</text>
+                <text x="15" y="472">mental health</text>
+                <text x="12" y="500">diagnoses alongside</text>
+                <text x="18" y="528">PMDD/PMOS/PCOS</text>
+
+                <text x="495" y="118">LACK OF CREDIBILITY WITH DOCTORS:</text>
+                <text x="500" y="160">• repeating my story of comorbidities,</text>
+                <text x="510" y="188">including PMDD/PCOS or PMOS and fibromyalgia</text>
+                <text x="500" y="220">• certain diagnoses, like being on the spectrum,</text>
+                <text x="512" y="246">as a woman are always questioned, so is</text>
+                <text x="542" y="272">ADHD</text>
+                <text x="500" y="320">• other women share my stories</text>
+
+                <text x="500" y="370">MEDICAL SYSTEM</text>
+                <text x="498" y="398">EXACERBATES ALREADY</text>
+                <text x="510" y="426">PRESENT SYMPTOMS:</text>
+                <text x="495" y="470">• CVS, insurance, doctor</text>
+                <text x="500" y="498">navigation = anxiety/fear</text>
+                <text x="493" y="528">• receiving wrong ADHD generic;</text>
+                <text x="495" y="556">not my fault, but who is</text>
+                <text x="495" y="584">paying for it?</text>
+              </g>
+
+              <g>
+                <path d="M330 355 C 331 268, 419 245, 492 260 C 565 275, 631 332, 629 396 C 626 471, 559 525, 460 529 C 405 531, 330 511, 331 355 Z" fill="#c66bd8"/>
+                <path d="M336 344 C 336 270, 407 243, 485 257 C 564 271, 620 326, 623 390 C 626 474, 553 514, 470 519 C 394 524, 336 492, 336 344 Z" fill="#47266e"/>
+                <path d="M340 334 C 350 286, 410 260, 480 265 C 547 270, 604 304, 607 374 C 610 436, 570 474, 494 485 C 431 494, 350 464, 340 334 Z" fill="#8f3ec1"/>
+                <path d="M372 286 L 549 284" stroke="#e9d760" stroke-width="12" fill="none"/>
+                <path d="M356 316 L 575 314" stroke="#ebc85d" stroke-width="10" fill="none"/>
+                <path d="M348 348 L 590 348" stroke="#f5d15e" stroke-width="8" fill="none"/>
+                <path d="M345 380 L 598 380" stroke="#f4b861" stroke-width="8" fill="none"/>
+                <path d="M350 412 L 600 412" stroke="#f49a5b" stroke-width="8" fill="none"/>
+                <path d="M373 454 L 570 454" stroke="#3fa9d9" stroke-width="8" fill="none"/>
+                <circle cx="402" cy="454" r="11" fill="#f7d650"/>
+                <circle cx="470" cy="454" r="11" fill="#f7d650"/>
+                <circle cx="542" cy="454" r="11" fill="#f7d650"/>
+                <rect x="369" y="275" width="18" height="12" fill="#7adeff"/>
+                <rect x="420" y="275" width="18" height="12" fill="#ff9d4e"/>
+                <rect x="468" y="275" width="18" height="12" fill="#7ae9de"/>
+                <rect x="512" y="275" width="18" height="12" fill="#ffce5d"/>
+                <rect x="555" y="275" width="18" height="12" fill="#7de1ff"/>
+                <path d="M453 360 C 484 330, 518 330, 542 352" stroke="#4bd0c3" stroke-width="8" fill="none"/>
+                <path d="M416 343 C 430 318, 470 304, 502 316" stroke="#f7c14d" stroke-width="8" fill="none"/>
+                <path d="M402 500 C 425 525, 450 535, 470 548" stroke="#f9475c" stroke-width="8" fill="none"/>
+              </g>
+
+              <g>
+                <ellipse cx="490" cy="518" rx="140" ry="28" fill="#f9e78f" opacity="0.9"/>
+                <path d="M455 518 L 502 482" stroke="#d99c2e" stroke-width="6" fill="none"/>
+                <path d="M515 518 L 551 482" stroke="#d99c2e" stroke-width="6" fill="none"/>
+                <path d="M486 518 L 496 470" stroke="#d99c2e" stroke-width="6" fill="none"/>
+                <circle cx="486" cy="460" r="8" fill="#1d1630"/>
+                <circle cx="512" cy="460" r="8" fill="#1d1630"/>
+              </g>
+
+              <g transform="translate(610 390)">
+                <g stroke="#1d1630" stroke-width="5" fill="none">
+                  <path d="M20 40 C 10 15, 18 0, 40 0 C 62 0, 72 15, 60 40"/>
+                  <path d="M16 40 C 35 65, 44 80, 50 100"/>
+                  <path d="M60 40 C 82 63, 92 80, 85 102"/>
+                  <path d="M48 100 L 35 135"/>
+                  <path d="M48 100 L 61 135"/>
+                  <path d="M35 135 L 17 171"/>
+                  <path d="M61 135 L 82 171"/>
+                </g>
+              </g>
+
+              <g font-family="Comic Sans MS, cursive" fill="#1d1630" font-size="20" font-weight="600">
+                <text x="620" y="205">LENS #1: THE YELLOW</text>
+                <text x="635" y="232">WALLPAPER</text>
+                <text x="615" y="460">LENS #2: THE SOPRANOS</text>
+                <text x="620" y="490">- portrays how gendered</text>
+                <text x="620" y="516">diagnoses are in the</text>
+                <text x="635" y="542">late 90s + early 2000s</text>
+              </g>
+
+              <g font-family="Comic Sans MS, cursive" fill="#1d1630" font-size="18">
+                <text x="180" y="200">PHENOMENON DRAFT:</text>
+                <text x="180" y="230">• systemic health failures</text>
+                <text x="180" y="255">to provide women with</text>
+                <text x="180" y="280">comorbidities and contested</text>
+                <text x="180" y="305">diagnoses proper psychiatric care</text>
+                <text x="185" y="360">QUESTIONS:</text>
+                <text x="180" y="390">• how did this silencing of women’s</text>
+                <text x="180" y="414">voices in medical settings come about?</text>
+                <text x="180" y="438">• why/how are certain diagnoses contested?</text>
+                <text x="180" y="462">• how come I am responsible for research</text>
+                <text x="180" y="486">why isn’t there enough research in the area?</text>
+              </g>
+            </svg>
+          </button>
+          <div class="figure-label">Image 2</div>
+        </figure>
+      </div>
+
       <p>I plan to write my paper about differences in generic stimulant medications not being taken seriously as a drug that is necessary for the patient, unlike a different class of likewise controlled substances like benzodiazepines. The reason behind the differences is that because being without benzodiazepines can have life-threatening effects, stimulant medications do not; nonetheless, withdrawal from stimulants is no walk in the park and a different generic medication can have serious mental health side-effects, like amplified anxiety. As of right now, I am interpreting this as a faulty drug quality control system and an unfair tier of priorities for doctors, pharmacies, and insurance.</p>
 
       <p>I received pink instead of orange Adderall at the pharmacy for the third time this year. Each time has been devastating, but each time has not been as equally as infuriating as the third. After the second time that it happened with a new psychiatrist, I specifically said that I can only tolerate two generic manufacturers: Teva and Sandoz, and I meant that forever and ever. Why would the pharmacy and doctor not document that? Why would I have to worry about that again?</p>
@@ -214,6 +515,44 @@
     </section>
   </main>
 
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <div class="lightbox-content">
+      <button type="button" class="close-btn" aria-label="Close image">×</button>
+      <div id="lightbox-inner"></div>
+    </div>
+  </div>
+
   <footer>&copy; 2026 zuz-arts &middot; portfolio</footer>
+
+  <script>
+    const imageButtons = document.querySelectorAll('.image-button');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxInner = document.getElementById('lightbox-inner');
+    const closeBtn = document.querySelector('.close-btn');
+
+    imageButtons.forEach((button) => {
+      button.addEventListener('click', () => {
+        const clone = button.querySelector('svg').cloneNode(true);
+        lightboxInner.innerHTML = '';
+        lightboxInner.appendChild(clone);
+        lightbox.classList.add('open');
+        lightbox.setAttribute('aria-hidden', 'false');
+      });
+    });
+
+    const closeLightbox = () => {
+      lightbox.classList.remove('open');
+      lightbox.setAttribute('aria-hidden', 'true');
+      lightboxInner.innerHTML = '';
+    };
+
+    closeBtn.addEventListener('click', closeLightbox);
+    lightbox.addEventListener('click', (event) => {
+      if (event.target === lightbox) closeLightbox();
+    });
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && lightbox.classList.contains('open')) closeLightbox();
+    });
+  </script>
 </body>
 </html>
